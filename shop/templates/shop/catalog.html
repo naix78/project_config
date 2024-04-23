@@ -1,0 +1,32 @@
+  {%extends "shop/base.html"%}
+  {%block title%} Каталог {%endblock%}
+  {%block content%}
+  <div class="container-fluid">
+    <h1>Catalog</h1>
+    <div class="d-flex gap-3">
+    {% for product in shop %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{product.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{product.title}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <span>{{product.price}}руб</span> <span style="color: red">-{{product.discount}}%</span>
+          <div>
+            {%for i in '**********'%}
+            {%if forloop.counter <= product.rating%}
+            <img width="20" height="20" src="https://img.icons8.com/emoji/48/star-emoji.png" alt="star-emoji"/>
+            {%else%}
+            <img style="filter: grayscale(1)" width="20" height="20" src="https://img.icons8.com/emoji/48/star-emoji.png" alt="star-emoji"/>
+            {%endif%}
+            {%endfor%}
+          </div>
+          <p>{{product.rating}}/10</p>
+          <p>В наличии: {{product.stock}}</p>
+          <a href="{%url 'product_detail' product_id=product.id%}" class="btn btn-primary">В корзину</a>
+        </div>
+      </div>
+    {%endfor%}
+    </div>
+  </div>
+  {%endblock%}
+    
