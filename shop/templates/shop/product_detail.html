@@ -1,4 +1,4 @@
-{%extends "shop/base.html"%}
+{%extends "core/base.html"%}
   {%block title%} Каталог {%endblock%}
   {%block content%}
   <h1>{{product_detail.title}}</h1>
@@ -23,4 +23,5 @@
       <p class="fs-3">В наличии: {{product_detail.stock}}</p>
     </div>
   </div>
+  <a class="btn" href="{%url 'create_order' product_id=product_detail.id%}" style="background-color: rgb(42, 128, 42); color: antiquewhite;">Заказать</a>
  {%endblock%}

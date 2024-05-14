@@ -28,10 +28,16 @@
               <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
+          <form class="d-flex me-4" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
+          <ul class="list-unstyled d-flex p-0 m-0 align-items-center">
+            <li><a href="{%url 'signin'%}" class="btn btn-outline-success">Войти</a></li>
+            <li><a href="{%url 'signup'%}" class="btn btn-outline-success">Зарегистрироватся</a></li>
+            <li><a href="{%url 'profile'%}" class="btn btn-outline-success">Профиль</a></li>
+            <li><a href="" class="btn btn-outline-success">Выйти</a></li>
+          </ul>
         </div>
       </div>
     </nav>

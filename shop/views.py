@@ -13,3 +13,13 @@ def orders (request):
 def product_detail (request, product_id):
     products = Product.objects.get(id=product_id)
     return render(request, 'shop/product_detail.html', {'product_detail': products})
+
+def create_order (request, product_id):
+    products = Product.objects.get(id=product_id)
+    if request.method=="POST":
+        address = request.POST["address"]
+        Order.objects.create(
+            product=products,
+            address=address
+        )
+    return render(request, 'shop/create_order.html', {'product_detail': products})
