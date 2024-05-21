@@ -1,10 +1,12 @@
 {%extends "core/base.html"%}
-  {%block title%} Зарегистрироватся {%endblock%}
+  {%block title%} Зарегистрироваться {%endblock%}
   {%block content%}
-    <form action="">
-        <input type="text" placeholder="Введите почту">
-        <input type="password" placeholder="Пароль">
-        <input type="password" placeholder="Повторите пароль">
-        <input type="text" placeholder="Введите имя пользователя">
+    <form method="post">
+        {%csrf_token%}
+        <input type="text" placeholder="Введите почту" name="email">
+        <input type="password" placeholder="Пароль" name="password">
+        <input type="password" placeholder="Повторите пароль" name="pasword_repeat">
+        <input type="text" placeholder="Введите имя пользователя" name="username">
+        <button class="btn" type="submit" style="background-color: rgb(66, 66, 212); color: antiquewhite;">Зарегистрироваться</button>
     </form>
   {%endblock%}

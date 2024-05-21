@@ -1,8 +1,10 @@
 {%extends "core/base.html"%}
-  {%block title%} Зарегистрироватся {%endblock%}
+  {%block title%} Войти {%endblock%}
   {%block content%}
-    <form action="">
-        <input type="text" placeholder="Имя пользователя">
-        <input type="password" placeholder="Пароль">
+    <form method="post">
+        {%csrf_token%}
+        <input type="text" placeholder="Введите почту" name="email">
+        <input type="password" placeholder="Пароль" name="password">
+        <button class="btn" type="submit" style="background-color: rgb(66, 66, 212); color: antiquewhite;">Войти</button>
     </form>
   {%endblock%}
